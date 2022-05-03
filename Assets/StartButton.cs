@@ -11,12 +11,13 @@ using UnityEngine.SceneManagement;
 public class StartButton : MonoBehaviour
 {
 
-    [SerializeField] private SCENES scene; //ボタンを押したときシーンを遷移する
-
-    public enum SCENES
+    [SerializeField] private Scenes scene; //ボタンを押したときシーンを遷移する
+    float ScaleChangeTime = 0.5f;
+    float ScaleChangeMagnification = 1.1f;
+    public enum Scenes
     {
         Title,
-        SampleScene,
+        Main,
     }
 
     /// <summary>
@@ -24,9 +25,7 @@ public class StartButton : MonoBehaviour
     /// </summary>
     public void OnClicked()
     {
-        Time.timeScale = 1f;
-        transform.DOScale(1.1f,0.5f).SetEase(Ease.OutElastic)
-        .OnComplete(() => transform.DOScale(1f,0.5f)).OnComplete(() => SceneManager.LoadScene($"{scene}"));    
+        transform.DOScale(ScaleChangeMagnification,ScaleChangeTime).SetEase(Ease.OutElastic).OnComplete(() => SceneManager.LoadScene($"{scene}"));    
     }
     
 }
