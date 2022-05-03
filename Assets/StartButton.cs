@@ -12,8 +12,8 @@ public class StartButton : MonoBehaviour
 {
 
     [SerializeField] private Scenes scene; //ボタンを押したときシーンを遷移する
-    float ScaleChangeTime = 0.5f;
-    float ScaleChangeMagnification = 1.1f;
+    float scaleChangeSeconds = 0.5f;
+    float scaleChangeMagnification = 1.1f;
     public enum Scenes
     {
         Title,
@@ -25,7 +25,7 @@ public class StartButton : MonoBehaviour
     /// </summary>
     public void OnClicked()
     {
-        transform.DOScale(ScaleChangeMagnification,ScaleChangeTime).SetEase(Ease.OutElastic).OnComplete(() => SceneManager.LoadScene($"{scene}"));    
+        transform.DOScale(scaleChangeMagnification,scaleChangeSeconds).SetEase(Ease.OutElastic).OnComplete(() => SceneManager.LoadScene($"{scene}"));    
     }
     
 }
