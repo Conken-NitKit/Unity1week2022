@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
+/// <summary>
+/// Wallの全ての処理を管理するメソッド
+/// </summary>
 public class WallManager : MonoBehaviour
 {
     [SerializeField] WallAnimation wallAnimation;
 
-    void Stare()
-    {
-        
-    }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        wallAnimation.widthWallMove();
+        wallAnimation.WallMove();
     }
 
 }
