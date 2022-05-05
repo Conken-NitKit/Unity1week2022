@@ -1,17 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class WallManager : MonoBehaviour
 {
-    void Start()
+    [SerializeField] WallAnimation wallAnimation;
+
+    void Stare()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        wallAnimation.widthWallMove();
     }
+
 }
