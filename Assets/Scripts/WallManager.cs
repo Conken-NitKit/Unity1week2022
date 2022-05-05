@@ -9,11 +9,15 @@ using DG.Tweening;
 public class WallManager : MonoBehaviour
 {
     [SerializeField] WallAnimation wallAnimation;
-
+    private void Start()
+    {
+        wallAnimation.MoveWall();
+    }
 
     private void FixedUpdate()
     {
-        wallAnimation.WallMove();
+        
+        
     }
 
 }
