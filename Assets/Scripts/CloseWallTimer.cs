@@ -3,27 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Wallが動き始めるまでのwait時間をカウントするメソッド
+/// </summary>
 public class CloseWallTimer : MonoBehaviour
 {
-    public Text closeWallTimerText;
-    public Text displayGoText;
-    public float countStartTime;
-    int seconds;
+    [SerializeField] Text wallCloseTimerText;
+    [SerializeField] Text displayGoText; //変数困る
+    [SerializeField] float countStartTime;
+    int waitingSeconds;
 
     private void FixedUpdate()
     {
         countStartTime -= Time.deltaTime;
 
         //float型からint型に変換
-        seconds = (int)countStartTime;
+        waitingSeconds = (int)countStartTime;
 
-        if (seconds > 0)
+        if (waitingSeconds > 0)
         {
-            closeWallTimerText.text = seconds.ToString();
+            wallCloseTimerText.text = waitingSeconds.ToString();
         }
-        else if(seconds <= 0)
+        else if(waitingSeconds <= 0)
         {
-            closeWallTimerText.text = "";
+            wallCloseTimerText.text = "";
         }
        
     }
