@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallAnimation: {fileID: 2562579521514770593}
+  closeWallTimer: {fileID: 0}
 --- !u!114 &2562579521514770593
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -22,19 +22,33 @@ public class WallAnimation : MonoBehaviour
         
         if (pos.x < 0)
         {
-            transform.DOLocalMove(new Vector3(-distanceCenter, 0, 0), moveWallSeconds).SetDelay(closeWallWSeconds);
+            transform.DOLocalMove(new Vector3(-distanceCenter, 0, 0), moveWallSeconds)
+                .SetDelay(closeWallWSeconds)
+                .SetLoops(2, LoopType.Yoyo)
+                .SetEase(Ease.OutQuart);
+
         }
         else if(pos.x > 0)
         {
-            transform.DOLocalMove(new Vector3(distanceCenter, 0, 0), moveWallSeconds).SetDelay(closeWallWSeconds);
+            transform.DOLocalMove(new Vector3(distanceCenter, 0, 0), moveWallSeconds)
+                .SetDelay(closeWallWSeconds)
+                .SetLoops(2, LoopType.Yoyo)
+                .SetEase(Ease.OutQuart);
+
         }
         else if (pos.y < 0)
         {
-            transform.DOLocalMove(new Vector3(0, -distanceCenter, 0), moveWallSeconds).SetDelay(closeWallWSeconds);
+            transform.DOLocalMove(new Vector3(0, -distanceCenter, 0), moveWallSeconds)
+                .SetDelay(closeWallWSeconds)
+                .SetLoops(2, LoopType.Yoyo)
+                .SetEase(Ease.OutQuart);
         }
         else
         {
-            transform.DOLocalMove(new Vector3(0, distanceCenter, 0), moveWallSeconds).SetDelay(closeWallWSeconds);
+            transform.DOLocalMove(new Vector3(0, distanceCenter, 0), moveWallSeconds)
+                .SetDelay(closeWallWSeconds)
+                .SetLoops(2, LoopType.Yoyo)
+                .SetEase(Ease.OutQuart);
         }
     }
 

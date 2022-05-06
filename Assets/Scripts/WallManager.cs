@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
 
 /// <summary>
 /// Wallの全ての処理を管理するメソッド
@@ -9,6 +10,7 @@ using DG.Tweening;
 public class WallManager : MonoBehaviour
 {
     [SerializeField] WallAnimation wallAnimation;
+    
     private void Start()
     {
         wallAnimation.MoveWall();
@@ -16,7 +18,7 @@ public class WallManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+
     }
 
 }
