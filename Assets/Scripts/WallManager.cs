@@ -11,14 +11,9 @@ public class WallManager : MonoBehaviour
 {
     [SerializeField] WallAnimation wallAnimation;
     
-    private void Start()
+    void Start()
     {
         wallAnimation.MoveWall();
+  
     }
-
-    private void FixedUpdate()
-    {
-
-    }
-
 }

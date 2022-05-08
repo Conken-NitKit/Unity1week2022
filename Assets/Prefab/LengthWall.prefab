@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2562579521514770593}
   - component: {fileID: 210825253085688665}
   m_Layer: 0
-  m_Name: Wall
+  m_Name: LengthWall
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallAnimation: {fileID: 2562579521514770593}
-  closeWallTimer: {fileID: 0}
 --- !u!114 &2562579521514770593
 MonoBehaviour:
   m_ObjectHideFlags: 0

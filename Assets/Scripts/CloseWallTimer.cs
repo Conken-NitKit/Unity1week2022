@@ -9,22 +9,19 @@ using UnityEngine.UI;
 public class CloseWallTimer : MonoBehaviour
 {
     [SerializeField] Text wallCloseTimerText;
-    [SerializeField] Text displayGoText; //変数困る
+    [SerializeField] Text displayGoText; //GoTextを表示する
     [SerializeField] float countStartTime;
-    int waitingSeconds;
+    float waitingSeconds;
 
     private void FixedUpdate()
     {
         countStartTime -= Time.deltaTime;
 
-        //float型からint型に変換
-        waitingSeconds = (int)countStartTime;
-
-        if (waitingSeconds > 0)
+        if (countStartTime > 0)
         {
-            wallCloseTimerText.text = waitingSeconds.ToString();
+            wallCloseTimerText.text = countStartTime.ToString("F0");
         }
-        else if (waitingSeconds <= 0)
+        else if (countStartTime <= 0)
         {
             wallCloseTimerText.text = "";
         }
