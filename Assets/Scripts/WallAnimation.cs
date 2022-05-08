@@ -8,8 +8,7 @@ public class WallAnimation : MonoBehaviour
 {
 
     [SerializeField] float moveWallSeconds;
-    [SerializeField] TestScript testScript;
-
+    
     [SerializeField] int openedWallCount = 0; 
 
     public void MoveWall()
