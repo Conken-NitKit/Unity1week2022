@@ -16,21 +16,21 @@ public class Arrow : MonoBehaviour
     private const float SecondSize = 2.5f;
     private const float DefaultSize = 1f;
 
-    private float firstMoveSeconds = 0.07f;
-    private float secondMoveSeconds = 0.3f;
+    private float firstChangeSeconds = 0.07f;
+    private float secondChangeSeconds = 0.3f;
 
     float disappearAlpha = 0f;
-    float normalAlpha = 255f;
+    float defaultAlpha = 255f;
 
     ///<summary>
     ///矢印が現れて消える
     ///</summary>
-    public void ArrowAppear()
+    public void AppearArrow()
     {
-        this.transform.DOScale(new Vector2(FirstSize,FirstSize),firstMoveSeconds);
-        image.DOFade(normalAlpha,firstMoveSeconds).OnComplete(()=>{
-            image.DOFade(disappearAlpha,secondMoveSeconds).SetEase(Ease.OutBack);
-            this.transform.DOScale(new Vector2(SecondSize,SecondSize),secondMoveSeconds);
+        this.transform.DOScale(new Vector2(FirstSize,FirstSize),firstChangeSeconds);
+        image.DOFade(defaultAlpha,firstChangeSeconds).OnComplete(()=>{
+            image.DOFade(disappearAlpha,secondChangeSeconds).SetEase(Ease.OutBack);
+            this.transform.DOScale(new Vector2(SecondSize,SecondSize),secondChangeSeconds);
         });
         this.transform.localScale = new Vector2(DefaultSize,DefaultSize);
     }
