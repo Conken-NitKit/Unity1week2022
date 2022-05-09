@@ -14,7 +14,6 @@ public class Player : MonoBehaviour
     private const float LeftXPosition = -2f;
     private const float UpYPosition = 2.5f;
     private const float DownYPosition = -2.5f;
-
     private const float MoveSeconds = 0.01f;
 
     private bool pushOtherKey = false;
