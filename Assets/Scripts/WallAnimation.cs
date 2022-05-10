@@ -9,7 +9,7 @@ public class WallAnimation : MonoBehaviour
 
     [SerializeField] float moveWallSeconds;
     
-    [SerializeField] int openedWallCount = 0; 
+    public int openedWallCount = 0; 
 
     public void MoveWall()
     {
