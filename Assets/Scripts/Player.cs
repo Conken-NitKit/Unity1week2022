@@ -8,6 +8,11 @@ using DG.Tweening;
 ///</summary>
 public class Player : MonoBehaviour
 {
+    [SerializeField]
+    AudioClip moveSound;
+
+    AudioSource audioSource;
+
     private const float DefaultXPosition = 0;
     private const float DefaultYPosition = 0;
     private const float RightXPositon = 2f;
@@ -21,6 +26,11 @@ public class Player : MonoBehaviour
     private bool pushLeftArrowKey = false;
     private bool pushUpArrowKey = false;
     private bool pushDownArrowKey = false;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -37,6 +47,7 @@ public class Player : MonoBehaviour
             this.transform.DOMove(new Vector2(RightXPositon,DefaultYPosition),MoveSeconds);
             pushOtherKey = true;
             pushRightArrowKey = true;
+            audioSource.PlayOneShot(moveSound);
         }
 
         if(Input.GetKey(KeyCode.LeftArrow) && pushOtherKey == false)
@@ -44,6 +55,7 @@ public class Player : MonoBehaviour
             this.transform.DOMove(new Vector2(LeftXPosition,DefaultYPosition),MoveSeconds);
             pushOtherKey = true;
             pushLeftArrowKey = true;
+            audioSource.PlayOneShot(moveSound);
         }
 
         if(Input.GetKey(KeyCode.UpArrow) && pushOtherKey == false)
@@ -51,6 +63,7 @@ public class Player : MonoBehaviour
             this.transform.DOMove(new Vector2(DefaultXPosition,UpYPosition),MoveSeconds);
             pushOtherKey = true;
             pushUpArrowKey = true;
+            audioSource.PlayOneShot(moveSound);
         }
 
         if(Input.GetKey(KeyCode.DownArrow) && pushOtherKey == false)
@@ -58,6 +71,7 @@ public class Player : MonoBehaviour
             this.transform.DOMove(new Vector2(DefaultXPosition,DownYPosition),MoveSeconds);
             pushOtherKey = true;
             pushDownArrowKey = true;
+            audioSource.PlayOneShot(moveSound);
         }
 
         if((Input.GetKeyUp(KeyCode.RightArrow) && pushRightArrowKey == true) || (Input.GetKeyUp(KeyCode.LeftArrow) && pushLeftArrowKey == true) || (Input.GetKeyUp(KeyCode.UpArrow) && pushUpArrowKey == true) || (Input.GetKeyUp(KeyCode.DownArrow) && pushDownArrowKey == true))
