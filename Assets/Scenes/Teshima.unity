@@ -398,7 +398,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696a367ac05fc8948802390272aab9a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSound: {fileID: 8300000, guid: 79d686dc7f909834691f6923ed48c64d, type: 3}
+  soundMove: {fileID: 8300000, guid: 79d686dc7f909834691f6923ed48c64d, type: 3}
+  audioSource: {fileID: 238217721}
 --- !u!224 &978923700 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4502779995403900732, guid: 4d7d30660444c5d4abd883a6ca522147, type: 3}
