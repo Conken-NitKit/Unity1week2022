@@ -16,7 +16,7 @@ public class WallAnimation : MonoBehaviour
         Vector3 pos = transform.position;
 
         float distanceCenter = 3.0f; ///壁のxまたはy座標の原点
-        float closeWallWSeconds = 3.0f; ///壁が動き始めるまでの時間
+        float wallCloseWSeconds = 3.0f; ///壁が動き始めるまでの時間
 
         Sequence sequence = DOTween.Sequence();//メンバ変数でSequenceのインスタンスを作成
 
@@ -25,7 +25,7 @@ public class WallAnimation : MonoBehaviour
         {
             sequence.Append
                 (transform.DOLocalMove(new Vector3(-distanceCenter, 0, 0), moveWallSeconds)
-                .SetDelay(closeWallWSeconds)
+                .SetDelay(wallCloseWSeconds)
                 .SetLoops(2, LoopType.Yoyo)
                 .OnComplete(()=> {
                     openedWallCount++;
@@ -39,7 +39,7 @@ public class WallAnimation : MonoBehaviour
         {
             sequence.Append
                (transform.DOLocalMove(new Vector3(distanceCenter, 0, 0), moveWallSeconds)
-               .SetDelay(closeWallWSeconds)
+               .SetDelay(wallCloseWSeconds)
                .SetLoops(2, LoopType.Yoyo)
                .SetEase(Ease.OutQuart))
                .SetLoops(-1);
