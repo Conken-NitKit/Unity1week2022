@@ -7,9 +7,9 @@ using UnityEngine;
 public class WallAnimation : MonoBehaviour
 {
 
-    [SerializeField] float moveWallSeconds;
+    [SerializeField] float wallMoveSeconds;
     
-    public int openedWallCount = 0; 
+    public int wallOpenedCount = 0; 
 
     public void MoveWall()
     {
@@ -24,12 +24,12 @@ public class WallAnimation : MonoBehaviour
         if (pos.x < 0)
         {
             sequence.Append
-                (transform.DOLocalMove(new Vector3(-distanceCenter, 0, 0), moveWallSeconds)
+                (transform.DOLocalMove(new Vector3(-distanceCenter, 0, 0), wallMoveSeconds)
                 .SetDelay(wallCloseWSeconds)
                 .SetLoops(2, LoopType.Yoyo)
                 .OnComplete(()=> {
-                    openedWallCount++;
-                    Debug.Log("Opened：" + openedWallCount);
+                    wallOpenedCount++;
+                    Debug.Log("Opened：" + wallOpenedCount);
 
                  })
                 .SetEase(Ease.OutQuart))
@@ -38,7 +38,7 @@ public class WallAnimation : MonoBehaviour
         else if(pos.x > 0)
         {
             sequence.Append
-               (transform.DOLocalMove(new Vector3(distanceCenter, 0, 0), moveWallSeconds)
+               (transform.DOLocalMove(new Vector3(distanceCenter, 0, 0), wallMoveSeconds)
                .SetDelay(wallCloseWSeconds)
                .SetLoops(2, LoopType.Yoyo)
                .SetEase(Ease.OutQuart))
