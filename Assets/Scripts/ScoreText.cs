@@ -10,7 +10,7 @@ using DG.Tweening;
 public class ScoreText : MonoBehaviour
 {
     [SerializeField]private WallAnimation wallAnimation;
-    public Text scoreText;
+    [SerializeField]public Text scoreText;
 
     private void Start()
     {
@@ -19,6 +19,6 @@ public class ScoreText : MonoBehaviour
     
     public void SetScore()
     {
-        scoreText.text = "回避数 " + wallAnimation.ToString() + "回" ;
+        scoreText.text = $"回避数 " + wallAnimation.wallOpenedCount.ToString() + "回" ;
     }    
 }

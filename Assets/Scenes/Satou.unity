@@ -519,7 +519,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u56DE\u907F\u6570\uFF11\uFF10\u56DE"
+  m_Text: 
 --- !u!222 &1849857272
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -540,5 +540,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c9ccbb4e9f5c38419621bbb8b4c32b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallAnimation: {fileID: 0}
+  wallAnimation: {fileID: 2562579521514770593, guid: c88c86f5d35c31947b144853ada54537, type: 3}
   scoreText: {fileID: 1849857271}
