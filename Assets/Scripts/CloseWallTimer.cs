@@ -1,34 +1,30 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// Wall‚ª“®‚«n‚ß‚é‚Ü‚Å‚ÌwaitŠÔ‚ğƒJƒEƒ“ƒg‚·‚éƒƒ\ƒbƒh
+/// WallãŒå‹•ãå§‹ã‚ã‚‹ã¾ã§ã®waitæ™‚é–“ã‚’ã‚«ã‚¦ãƒ³ãƒˆã™ã‚‹ãƒ¡ã‚½ãƒƒãƒ‰
 /// </summary>
 public class CloseWallTimer : MonoBehaviour
 {
     [SerializeField] Text wallCloseTimerText;
-    [SerializeField] Text displayGoText; //•Ï”¢‚é
+    [SerializeField] Text displayGoText; //GoTextã‚’è¡¨ç¤ºã™ã‚‹
     [SerializeField] float countStartTime;
-    int waitingSeconds;
+    float waitingSeconds;
 
     private void FixedUpdate()
     {
         countStartTime -= Time.deltaTime;
 
-        //floatŒ^‚©‚çintŒ^‚É•ÏŠ·
-        waitingSeconds = (int)countStartTime;
-
-        if (waitingSeconds > 0)
+        if (countStartTime > 0)
         {
-            wallCloseTimerText.text = waitingSeconds.ToString();
+            wallCloseTimerText.text = countStartTime.ToString("F0");
         }
-        else if(waitingSeconds <= 0)
+        else if (countStartTime <= 0)
         {
             wallCloseTimerText.text = "";
         }
-       
     }
 
 }
