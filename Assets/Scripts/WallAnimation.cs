@@ -7,7 +7,7 @@ using UnityEngine;
 public class WallAnimation : MonoBehaviour
 {
 
-    [SerializeField] float wallMoveSeconds;
+    float wallMoveSeconds = 5.0f;
     
     public int wallOpenedCount = 0; 
 
