@@ -19,6 +19,6 @@ public class ScoreText : MonoBehaviour
     
     public void SetScore()
     {
-        scoreText.text = $"回避数 " + wallAnimation.wallOpenedCount.ToString() + "回" ;
+        scoreText.text = $"回避数 {wallAnimation.wallOpenedCount}回" ;
     }    
 }
