@@ -13,6 +13,19 @@ public class Player : MonoBehaviour
     [SerializeField]
     AudioSource audioSource;
 
+    [SerializeField]
+    SpriteRenderer spriteRenderer;
+
+    [SerializeField]
+    Sprite leftwardSprite;
+    [SerializeField]
+    Sprite rightwardSprite;
+    [SerializeField]
+    Sprite upwardSprite;
+    [SerializeField]
+    Sprite defaultSprite;
+
+
     private const float DefaultXPosition = 0;
     private const float DefaultYPosition = 0;
     private const float RightXPositon = 2f;
@@ -40,6 +53,7 @@ public class Player : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.RightArrow) && pushOtherKey == false)
         {
+            spriteRenderer.sprite = rightwardSprite;
             this.transform.DOMove(new Vector2(RightXPositon,DefaultYPosition),MoveSeconds);
             pushOtherKey = true;
             pushRightArrowKey = true;
@@ -48,6 +62,7 @@ public class Player : MonoBehaviour
 
         if(Input.GetKey(KeyCode.LeftArrow) && pushOtherKey == false)
         {
+            spriteRenderer.sprite = leftwardSprite;
             this.transform.DOMove(new Vector2(LeftXPosition,DefaultYPosition),MoveSeconds);
             pushOtherKey = true;
             pushLeftArrowKey = true;
@@ -56,6 +71,7 @@ public class Player : MonoBehaviour
 
         if(Input.GetKey(KeyCode.UpArrow) && pushOtherKey == false)
         {
+            spriteRenderer.sprite = upwardSprite;
             this.transform.DOMove(new Vector2(DefaultXPosition,UpYPosition),MoveSeconds);
             pushOtherKey = true;
             pushUpArrowKey = true;
@@ -72,6 +88,7 @@ public class Player : MonoBehaviour
 
         if((Input.GetKeyUp(KeyCode.RightArrow) && pushRightArrowKey == true) || (Input.GetKeyUp(KeyCode.LeftArrow) && pushLeftArrowKey == true) || (Input.GetKeyUp(KeyCode.UpArrow) && pushUpArrowKey == true) || (Input.GetKeyUp(KeyCode.DownArrow) && pushDownArrowKey == true))
         {
+            spriteRenderer.sprite = defaultSprite;
             this.transform.DOMove(new Vector2(DefaultXPosition,DefaultYPosition),MoveSeconds);
             pushOtherKey = false;
             if(pushRightArrowKey == true)
