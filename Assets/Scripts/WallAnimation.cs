@@ -45,26 +45,44 @@ public class WallAnimation : MonoBehaviour
                .SetLoops(-1);
         }
 
-        /*else if (pos.y < 0)
+        else if (pos.y < 0)
         {
-             sequence.Append
+             /*sequence.Append
                 (transform.DOLocalMove(new Vector3(0,-distanceCenter, 0), moveWallSeconds)
-                .SetDelay(closeWallWSeconds)
+                .SetDelay(wallCloseWSeconds)
                 .SetLoops(2, LoopType.Yoyo)
                 .OnComplete(()=> Debug.Log(openedWallCount++))
+                .SetEase(Ease.OutQuart))
+                .SetLoops(-1);*/
+
+            sequence.Append
+                (transform.DOLocalMove(new Vector3(0, -distanceCenter, 0), wallMoveSeconds)
+                .SetDelay(wallCloseWSeconds)
+                .SetLoops(2, LoopType.Yoyo)
+                .OnComplete(() => {
+                    wallOpenedCount++;
+                    Debug.Log("Opened：" + wallOpenedCount);
+
+                })
                 .SetEase(Ease.OutQuart))
                 .SetLoops(-1);
         }
         else
         {
-            sequence.Append
+            /*sequence.Append
                  (transform.DOLocalMove(new Vector3(0, distanceCenter, 0), moveWallSeconds)
-                 .SetDelay(closeWallWSeconds)
+                 .SetDelay(wallCloseWSeconds)
                  .SetLoops(2, LoopType.Yoyo)
                  .SetEase(Ease.OutQuart))
-                 .SetLoops(-1);
+                 .SetLoops(-1);*/
+            sequence.Append
+               (transform.DOLocalMove(new Vector3(0, distanceCenter, 0), wallMoveSeconds)
+               .SetDelay(wallCloseWSeconds)
+               .SetLoops(2, LoopType.Yoyo)
+               .SetEase(Ease.OutQuart))
+               .SetLoops(-1);
         }
-        */
+        
     }
 
 }
