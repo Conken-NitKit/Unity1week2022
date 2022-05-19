@@ -99,10 +99,10 @@ MonoBehaviour:
   soundMove: {fileID: 8300000, guid: 79d686dc7f909834691f6923ed48c64d, type: 3}
   audioSource: {fileID: 3635283441782466425}
   spriteRenderer: {fileID: 3635283441782466427}
-  leftwardSprite: {fileID: 21300000, guid: 692a95cc32e5244afb81ab5da96f50b4, type: 3}
-  rightwardSprite: {fileID: 21300000, guid: 3aef8abc03ec1473f880af90e3a363b1, type: 3}
-  upwardSprite: {fileID: 21300000, guid: 22e2e266842ee4be99cc17a825471e49, type: 3}
-  defaultSprite: {fileID: 21300000, guid: 78d03ce1d36c540d5a183e4b042d3afb, type: 3}
+  leftWardSprite: {fileID: 21300000, guid: 692a95cc32e5244afb81ab5da96f50b4, type: 3}
+  rightWardSprite: {fileID: 21300000, guid: 3aef8abc03ec1473f880af90e3a363b1, type: 3}
+  upWardSprite: {fileID: 21300000, guid: 22e2e266842ee4be99cc17a825471e49, type: 3}
+  downWardSprite: {fileID: 21300000, guid: 78d03ce1d36c540d5a183e4b042d3afb, type: 3}
 --- !u!82 &3635283441782466425
 AudioSource:
   m_ObjectHideFlags: 0

@@ -17,13 +17,13 @@ public class Player : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     [SerializeField]
-    Sprite leftwardSprite;
+    Sprite leftWardSprite;
     [SerializeField]
-    Sprite rightwardSprite;
+    Sprite rightWardSprite;
     [SerializeField]
-    Sprite upwardSprite;
+    Sprite upWardSprite;
     [SerializeField]
-    Sprite defaultSprite;
+    Sprite downWardSprite;
 
 
     private const float DefaultXPosition = 0;
@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.RightArrow) && pushOtherKey == false)
         {
-            spriteRenderer.sprite = rightwardSprite;
+            spriteRenderer.sprite = rightWardSprite;
             this.transform.DOMove(new Vector2(RightXPositon,DefaultYPosition),MoveSeconds);
             pushOtherKey = true;
             pushRightArrowKey = true;
@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
 
         if(Input.GetKey(KeyCode.LeftArrow) && pushOtherKey == false)
         {
-            spriteRenderer.sprite = leftwardSprite;
+            spriteRenderer.sprite = leftWardSprite;
             this.transform.DOMove(new Vector2(LeftXPosition,DefaultYPosition),MoveSeconds);
             pushOtherKey = true;
             pushLeftArrowKey = true;
@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
 
         if(Input.GetKey(KeyCode.UpArrow) && pushOtherKey == false)
         {
-            spriteRenderer.sprite = upwardSprite;
+            spriteRenderer.sprite = upWardSprite;
             this.transform.DOMove(new Vector2(DefaultXPosition,UpYPosition),MoveSeconds);
             pushOtherKey = true;
             pushUpArrowKey = true;
@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
 
         if((Input.GetKeyUp(KeyCode.RightArrow) && pushRightArrowKey == true) || (Input.GetKeyUp(KeyCode.LeftArrow) && pushLeftArrowKey == true) || (Input.GetKeyUp(KeyCode.UpArrow) && pushUpArrowKey == true) || (Input.GetKeyUp(KeyCode.DownArrow) && pushDownArrowKey == true))
         {
-            spriteRenderer.sprite = defaultSprite;
+            spriteRenderer.sprite = downWardSprite;
             this.transform.DOMove(new Vector2(DefaultXPosition,DefaultYPosition),MoveSeconds);
             pushOtherKey = false;
             if(pushRightArrowKey == true)
