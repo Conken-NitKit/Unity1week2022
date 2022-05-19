@@ -47,14 +47,7 @@ public class WallAnimation : MonoBehaviour
 
         else if (pos.y < 0)
         {
-             /*sequence.Append
-                (transform.DOLocalMove(new Vector3(0,-distanceCenter, 0), moveWallSeconds)
-                .SetDelay(wallCloseWSeconds)
-                .SetLoops(2, LoopType.Yoyo)
-                .OnComplete(()=> Debug.Log(openedWallCount++))
-                .SetEase(Ease.OutQuart))
-                .SetLoops(-1);*/
-
+             
             sequence.Append
                 (transform.DOLocalMove(new Vector3(0, -distanceCenter, 0), wallMoveSeconds)
                 .SetDelay(wallCloseWSeconds)
@@ -69,12 +62,6 @@ public class WallAnimation : MonoBehaviour
         }
         else
         {
-            /*sequence.Append
-                 (transform.DOLocalMove(new Vector3(0, distanceCenter, 0), moveWallSeconds)
-                 .SetDelay(wallCloseWSeconds)
-                 .SetLoops(2, LoopType.Yoyo)
-                 .SetEase(Ease.OutQuart))
-                 .SetLoops(-1);*/
             sequence.Append
                (transform.DOLocalMove(new Vector3(0, distanceCenter, 0), wallMoveSeconds)
                .SetDelay(wallCloseWSeconds)
