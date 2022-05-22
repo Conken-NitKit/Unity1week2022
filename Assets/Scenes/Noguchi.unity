@@ -846,6 +846,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundMove: {fileID: 0}
   audioSource: {fileID: 0}
+  spriteRenderer: {fileID: 1712980416}
+  leftWardSprite: {fileID: 21300000, guid: 692a95cc32e5244afb81ab5da96f50b4, type: 3}
+  rightWardSprite: {fileID: 21300000, guid: 3aef8abc03ec1473f880af90e3a363b1, type: 3}
+  upWardSprite: {fileID: 21300000, guid: 22e2e266842ee4be99cc17a825471e49, type: 3}
+  downWardSprite: {fileID: 21300000, guid: 78d03ce1d36c540d5a183e4b042d3afb, type: 3}
 --- !u!1001 &7679358032197584325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1002,6 +1007,10 @@ PrefabInstance:
       value: Walls
       objectReference: {fileID: 0}
     - target: {fileID: 7679358030722129675, guid: e72893d7cd27d6b468a4f512c6d0216c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679358031506111347, guid: e72893d7cd27d6b468a4f512c6d0216c, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
