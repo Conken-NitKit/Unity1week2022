@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// (LengthかWidth)WallのPrefabどちらかをランダムに呼び出すメソッド
+/// 4つのWallのPrefabどれかをランダムに呼び出すメソッド
 /// </summary>
 public class RandomWall : MonoBehaviour
 {
    
-    [SerializeField] GameObject[] cubePrefabs;
+    [SerializeField] GameObject[] wallPrefabs;
     [SerializeField] int randomNumber;
    
     void FixedUpdate()

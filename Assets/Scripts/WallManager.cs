@@ -10,10 +10,13 @@ using UnityEngine.UI;
 public class WallManager : MonoBehaviour
 {
     [SerializeField] WallAnimation wallAnimation;
-    
+    [SerializeField] GameObject[] randomCalledWalls;
+    int wallNumber; 
+
     void Start()
     {
         wallAnimation.MoveWall();
-  
+        wallNumber = Random.Range(0, randomCalledWalls.Length);
+
     }
 }
